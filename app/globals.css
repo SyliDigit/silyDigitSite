@@ -1,0 +1,128 @@
+/**
+ * @file app/globals.css
+ * SyliDigit - Design System
+ */
+
+ @import "tailwindcss";
+
+ /* =========================
+    🎨 THEME SYLIDIGIT
+ ========================= */
+ @theme {
+   /* Couleurs officielles logo */
+   --color-vert-fonce: #1B5E20;
+   --color-vert-moyen: #4CAF50;
+   --color-vert-lime: #8BC34A;
+   --color-jaune-dore: #D4AF37;
+   --color-jaune-clair: #FDD835;
+ 
+   /* Hover */
+   --color-vert-fonce-hover: #144d1a;
+   --color-jaune-dore-hover: #b9962e;
+ 
+   /* Gradients */
+   --gradient-primary: linear-gradient(
+     135deg,
+     var(--color-vert-fonce),
+     var(--color-vert-moyen),
+     var(--color-jaune-dore)
+   );
+ 
+   --gradient-secondary: linear-gradient(
+     135deg,
+     var(--color-vert-moyen),
+     var(--color-vert-lime)
+   );
+ 
+   /* Animations */
+   --animate-fade-in: fadeIn 0.8s ease-out forwards;
+ 
+   @keyframes fadeIn {
+     from {
+       opacity: 0;
+       transform: translateY(20px);
+     }
+     to {
+       opacity: 1;
+       transform: translateY(0);
+     }
+   }
+ }
+ 
+ /* =========================
+    🌍 GLOBAL
+ ========================= */
+ 
+ :root {
+   --background: #ffffff;
+   --foreground: #0f172a;
+ }
+ 
+ body {
+   background: var(--background);
+   color: var(--foreground);
+   font-family: "Inter", sans-serif;
+ }
+ 
+ /* =========================
+    📦 UTILITIES
+ ========================= */
+ 
+ @utility container-custom {
+   max-width: 1280px;
+   margin: auto;
+   padding-left: 1.5rem;
+   padding-right: 1.5rem;
+ }
+ 
+ @utility section-padding {
+   padding-top: 6rem;
+   padding-bottom: 6rem;
+ }
+ 
+ @utility text-gradient-sylidigit {
+   background: var(--gradient-primary);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+ }
+ 
+ /* Scrollbar moderne */
+ @layer utilities {
+   ::-webkit-scrollbar {
+     width: 8px;
+   }
+ 
+   ::-webkit-scrollbar-thumb {
+     background: var(--gradient-secondary);
+     border-radius: 6px;
+   }
+ }
+
+ /* =========================
+   PREMIUM LOOK
+========================= */
+
+.section-dark {
+  background: #0f172a;
+  color: white;
+}
+
+.card-premium {
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.card-premium:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+}
