@@ -18,26 +18,35 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
-      <div className="container-custom flex items-center justify-between py-4">
-
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
+        
         {/* LOGO */}
-        <Link href="/" className="flex items-center gap-2">
-          <Image src="/logo.png" alt="SyliDigit" width={40} height={40} />
-          <span className="font-bold text-xl text-gradient-sylidigit">
+        <Link href="/" className="flex items-center gap-3">
+        <div className="relative w-30 h-16 md:w-30 md:h-18">
+  <Image
+    src="/logo.png"
+    alt="Logo SyliDigit"
+    fill
+    className="object-contain"
+    priority
+  />
+</div>
+          {/* <span className="text-xl font-bold tracking-tight">
             SyliDigit
-          </span>
+          </span> */}
         </Link>
 
         {/* DESKTOP MENU */}
-        <nav className="hidden md:flex gap-8 font-medium">
+        <nav className="hidden md:flex items-center gap-8 font-medium">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="hover:text-[var(--color-vert-fonce)] transition"
+              className="relative group transition"
             >
               {link.name}
+              <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-[var(--color-vert-fonce)] transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
         </nav>
@@ -53,7 +62,7 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t shadow-lg animate-fade-in">
+        <div className="md:hidden bg-white border-t shadow-lg">
           <nav className="flex flex-col items-center py-6 gap-6">
             {navLinks.map((link) => (
               <Link
