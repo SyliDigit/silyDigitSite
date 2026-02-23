@@ -22,20 +22,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         
         {/* LOGO */}
-        <Link href="/" className="flex items-center gap-3">
-        <div className="relative w-30 h-16 md:w-30 md:h-18">
-  <Image
-    src="/logo.png"
-    alt="Logo SyliDigit"
-    fill
-    className="object-contain"
-    priority
-  />
-</div>
-          {/* <span className="text-xl font-bold tracking-tight">
-            SyliDigit
-          </span> */}
-        </Link>
+        <Link href="/" className="flex items-center shrink-0">
+  <div className="relative h-20 md:h-24 w-[280px] md:w-[380px]">
+    <Image
+      src="/logo.png"
+      alt="Logo SyliDigit"
+      fill
+      className="object-contain"
+      priority
+    />
+  </div>
+</Link>
 
         {/* DESKTOP MENU */}
         <nav className="hidden md:flex items-center gap-8 font-medium">
